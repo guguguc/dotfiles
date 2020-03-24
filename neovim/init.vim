@@ -24,8 +24,8 @@ noremap Q :q<CR>
 noremap <C-q> :qa<CR>
 noremap <C-s> :w<CR>
 
-noremap <silent> <leader>src :w<CR>:source $MYVIMRC<CR>
-noremap <silent> <leader>rc :e $MYVIMRC<CR>
+noremap <silent> <leader>src :w<CR>:source ~/.config/nvim/init.vim<CR>
+noremap <silent> <leader>rc :e ~/.config/nvim/init.vim<CR>
 
 " press ` to change case
 noremap ` ~
@@ -63,12 +63,13 @@ cnoremap <C-e> <End>
 cnoremap <C-p> <Up>
 cnoremap <C-n> <Down>
 
-call plug#begin('~/Appdata/local/Nvim/plugged')
+" call plug#begin('~/Appdata/local/Nvim/plugged')
+call plug#begin('~/.local/share/nvim/plugged')
 
 " color theme
 Plug 'connorholyday/vim-snazzy'
 Plug 'junegunn/vim-easy-align'
-"Plug 'easymotion/vim-easymotion'
+Plug 'easymotion/vim-easymotion'
 Plug 'asvetliakov/vim-easymotion'
 Plug 'jiangmiao/auto-pairs'
 
