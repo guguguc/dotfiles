@@ -1,0 +1,18 @@
+{
+    "python.autoComplete.addBrackets": true,
+	"languageserver": {
+		"ccls": {
+			"command": "ccls",
+			"filetypes":["c", "cpp", "cuda", "objc", "objcpp"],
+			"rootPatterns": [".ccls", "compiler_commands.json", ".git", ".hg"],
+			"initializationOptions": {
+				"cache": {
+					"directory": ".ccls-cache"
+				},
+				"client":{
+					"snippetSupport": true
+				}
+			}
+		}
+	}
+}

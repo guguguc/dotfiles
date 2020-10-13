@@ -1,0 +1,10 @@
+[section/base]
+include-file = /home/gugugu/.config/polybar/master.conf
+
+[bar/HDMI-0]
+inherit = bar/example
+monitor = HDMI-0
+
+[bar/DP-2]
+inherit = bar/example
+monitor = DP-2
