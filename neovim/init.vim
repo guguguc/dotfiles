@@ -149,7 +149,7 @@ nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
-"Format
+" Format
 xmap <leader><leader>f <Plug>(coc-format-seleted)
 nmap <leader><leader>f <Plug>(coc-format)
 
@@ -230,3 +230,4 @@ noremap <leader>tm :TableModeToggle<CR>
 "                         othors
 " =====================================================
 let g:python_highlight_all = 1
+
