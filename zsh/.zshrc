@@ -1,15 +1,30 @@
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
-HISTSIZE=50000
-SAVEHIST=50000
+HISTSIZE=500000
+SAVEHIST=500000
 PROMPT='%B%F{red}%~%f%b %# '
 setopt autocd beep extendedglob nomatch notify
 
+path+=('/home/gugugu/.local/bin')
+export PATH
+export QT_QPA_PLATFORMTHEME=qt5ct
+export QT_AUTO_SCREEN_SCALE_FACTOR=1
+
 # emacs edit mode
 bindkey -e
+bindkey '^ ' autosuggest-accept
+
 alias ls='ls --color'
 alias pc='proxychains'
 alias py='python'
+alias mk='mkdir'
+alias k='ls'
+alias kl='ls -alh'
+alias e='nvim'
+alias vic='vi ~/.config/i3/config'
+alias grep='grep --color=always'
+alias ip='ip --color=auto'
+alias xlog='cat /var/log/Xorg.0.log'
 
 man() {
     LESS_TERMCAP_md=$'\e[01;31m' \
@@ -30,7 +45,6 @@ zstyle ':completion:*' verbose yes
 zstyle ':completion:*:descriptions' format "$fg[yellow]%B--- %d%b"
 zstyle ':completion:*' group-name ''
 
-autoload -Uz compinit && compinit
 
 source "$HOME/.zinit/bin/zinit.zsh"
 autoload -Uz _zinit
@@ -54,3 +68,4 @@ zinit ice blockf; zinit light zsh-users/zsh-completions
 zinit ice silent wait:1; zinit light supercrabtree/k
 # zinit ice silent wait!1 atload"ZINIT[COMPINIT_OPTS]=-C; zpcompinit"
 zinit light zdharma/fast-syntax-highlighting
+autoload -Uz compinit && compinit
