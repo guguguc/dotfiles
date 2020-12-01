@@ -57,7 +57,7 @@ cnoremap <M-f> <S-Right>
 tnoremap <ESC> <c-\><c-n>
 
 " tabe
-noremap nt :tabe<CR>
+noremap <leader>nt :tabe<CR>
 noremap <silent> <M-Right> :+tabnext<CR>
 noremap <silent> <M-Left> :-tabnext<CR>
 
@@ -85,6 +85,7 @@ Plug 'ojroques/vim-scrollstatus'
 Plug 'RRethy/vim-illuminate'
 Plug 'luochen1990/rainbow'
 Plug 'airblade/vim-gitgutter'
+Plug 'ap/vim-css-color'
 
 " Navigation
 Plug 'liuchengxu/vista.vim'
