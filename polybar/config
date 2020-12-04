@@ -1,6 +1,10 @@
 [section/base]
 include-file = /home/gugugu/.config/polybar/master.conf
 
-[bar/eDP]
+[bar/monitor1]
 inherit = bar/example
-monitor = eDP
+monitor = HDMI-0
+
+[bar/monitor2]
+inherit = bar/example
+monitor = eDP-1-1

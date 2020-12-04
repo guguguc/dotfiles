@@ -150,7 +150,7 @@ nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
 " Format
-xmap <leader><leader>f <Plug>(coc-format-seleted)
+xmap <leader><leader>f <Plug>(coc-format-selected)
 nmap <leader><leader>f <Plug>(coc-format)
 
 " =====================================================
