@@ -28,6 +28,11 @@ set visualbell
 set colorcolumn=80
 
 " =====================================================
+"                          Terminal
+" =====================================================
+noremap <silent> <leader><leader>t :tabnew<CR>:terminal<CR>
+
+" =====================================================
 "                          Mappings
 " =====================================================
 
@@ -143,6 +148,9 @@ inoremap <silent><expr> <c-space> coc#refresh()
 nmap <silent> <leader>- <Plug>(coc-diagnostic-prev)
 nmap <silent> <leader>= <Plug>(coc-diagnostic-next)
 
+" Refaction
+nmap <F6> <Plug>(coc-rename)
+
 " Goto
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
@@ -230,4 +238,3 @@ noremap <leader>tm :TableModeToggle<CR>
 "                         othors
 " =====================================================
 let g:python_highlight_all = 1
-
