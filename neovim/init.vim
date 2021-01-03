@@ -66,6 +66,9 @@ noremap <leader>nt :tabe<CR>
 noremap <silent> <M-Right> :+tabnext<CR>
 noremap <silent> <M-Left> :-tabnext<CR>
 
+" motion
+noremap <silent> <c-h> :nohls<CR>
+
 " =====================================================
 "                          Plugs
 " =====================================================

@@ -38,6 +38,10 @@ man() {
 }
 
 autoload -U colors && colors
+# fix ctrl-w delete word
+autoload -U select-word-style
+select-word-style bash
+export WORDCHARS='.-'
 
 zstyle :compinstall filename '/home/gugugu/.zshrc'
 zstyle ':completion:*' menu select
