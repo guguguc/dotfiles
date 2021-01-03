@@ -99,6 +99,9 @@ Plug 'mbbill/undotree'
 " Highlight
 Plug 'nvim-treesitter/nvim-treesitter', {'commit': '3c07232'}
 
+" Language
+Plug 'fatih/vim-go', {'do': ':GoUpdateBinaries'}
+
 call plug#end()
 
 " =====================================================
@@ -117,7 +120,6 @@ EOF
 let g:coc_global_extensions = [
         \ 'coc-clangd',
         \ 'coc-python',
-        \ 'coc-go',
         \ 'coc-lua',
         \ 'coc-vimlsp',
         \ 'coc-json',
@@ -238,3 +240,4 @@ noremap <leader>tm :TableModeToggle<CR>
 "                         othors
 " =====================================================
 let g:python_highlight_all = 1
+hi MatchParen ctermfg=235 ctermbg=14 guifg=#eeeeee guibg=#3ab795
