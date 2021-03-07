@@ -1,5 +1,6 @@
 syntax on
-set number cursorline
+set number
+set cursorline
 set relativenumber
 set tabstop=4
 set tw=0
@@ -22,10 +23,12 @@ set wildmenu
 set updatetime=500
 set shortmess+=c
 set wrap
-set fillchars=vert:\|
+set fillchars+=vert:\▏
 set termguicolors
 set visualbell
 set colorcolumn=80
+set ttyfast
+set lazyredraw
 
 " =====================================================
 "                          Terminal
@@ -88,7 +91,7 @@ Plug 'dhruvasagar/vim-table-mode'
 
 " Dress
 Plug 'Rigellute/rigel'
-Plug 'vim-airline/vim-airline'
+Plug 'itchyny/lightline.vim'
 Plug 'ojroques/vim-scrollstatus'
 Plug 'RRethy/vim-illuminate'
 Plug 'luochen1990/rainbow'
@@ -100,10 +103,13 @@ Plug 'liuchengxu/vista.vim'
 Plug 'mbbill/undotree'
 
 " Highlight
-Plug 'nvim-treesitter/nvim-treesitter', {'commit': '3c07232'}
+Plug 'nvim-treesitter/nvim-treesitter'
 
 " Language
 Plug 'fatih/vim-go', {'do': ':GoUpdateBinaries'}
+
+Plug 'ryanoasis/vim-devicons'
+Plug 'ryanoasis/vim-devicons'
 
 call plug#end()
 
@@ -121,13 +127,13 @@ EOF
 " =====================================================
 " Extensions
 let g:coc_global_extensions = [
-        \ 'coc-clangd',
         \ 'coc-python',
         \ 'coc-lua',
         \ 'coc-vimlsp',
         \ 'coc-json',
         \ 'coc-snippets',
         \ 'coc-actions']
+
 
 " Tab complete
 inoremap <silent><expr> <TAB>
@@ -142,7 +148,9 @@ function! s:check_back_space() abort
 endfunction
 
 " Snippets
-imap <c-l> <Plug>(coc-snippets-expand)
+inoremap <silent><expr> <c-l> pumvisible() ? coc#_select_confirm() :
+                                           \"\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+" imap <C-l> <Plug>(coc-snippets-expand)
 vmap <Tab> <ESC>^cw<Tab>
 " vmap <c-j> <Plug>(coc-snippets-select)
 let g:coc_snippet_next = '<M-f>'
@@ -170,12 +178,10 @@ nmap <leader><leader>f <Plug>(coc-format)
 "                          nerdtree
 " =====================================================
 noremap <c-b> :NERDTreeToggle<CR>
-let g:NERDTreeDirArrowExpandable = ''
-let g:NERDTreeDirArrowCollapsible = ' '
 let g:NERDTreeHighlightCursorline = 0
-hi NerdTreeOpenable ctermfg=34 guifg=Red
-hi NerdTreeClosable ctermfg=34 guifg=Red
-hi NerdTreeDir ctermfg=34 guifg=#48aff0
+let NERDTreeShowHidden = 1
+let g:NERDTreeDirArrowExpandable = ''
+let g:NERDTreeDirArrowCollapsible = ''
 
 " =====================================================
 "                          undotree
@@ -192,11 +198,10 @@ hi UndotreeSavedSmall ctermfg=34 guifg=#f5ce8f
 colorscheme rigel
 
 "=====================================================
-"                          airline
+"                          lightline
 " =====================================================
-let g:airline_powerline_fonts = 1
-let g:airline_theme = 'rigel'
-
+let g:rigel_lightline = 1
+let g:lightline = { 'colorscheme': 'rigel' }
 
 " =====================================================
 "                          rainbow
@@ -244,3 +249,8 @@ noremap <leader>tm :TableModeToggle<CR>
 " =====================================================
 let g:python_highlight_all = 1
 hi MatchParen ctermfg=235 ctermbg=14 guifg=#eeeeee guibg=#3ab795
+hi NerdTreeOpenable ctermfg=34 guifg=#2aa198
+hi NerdTreeClosable ctermfg=34 guifg=#2aa198
+hi NERDTreeDir ctermfg=34 guifg=#48aff0
+hi NERDTreeFlags ctermfg=34 guifg=#2aa198
+

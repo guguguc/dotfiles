@@ -1,6 +1,10 @@
 {
-    "python.autoComplete.addBrackets": true,
-    "go.goplsOptions": {
-        "completeUnimported": true
-    }
+    "python.autoComplete.addBrackets": true
+    // "languageserver": {
+    //     "clangd": {
+    //         "command": "clangd",
+    //         "rootPatterns": ["compile_flags.txt", "compile_commands.json"],
+    //         "filetypes": ["c", "cpp", "cc", "c++"]
+    //     }
+    // }
 }

@@ -19,13 +19,14 @@ alias ls='ls --color'
 alias pc='proxychains'
 alias py='python'
 alias mk='mkdir'
-alias k='ls'
+# alias k='ls'
 alias kl='ls -alh'
 alias e='nvim'
 alias vic='vi ~/.config/i3/config'
 alias grep='grep --color=always'
 alias ip='ip --color=auto'
 alias xlog='cat /var/log/Xorg.0.log'
+alias clean='rm *.out'
 
 man() {
     LESS_TERMCAP_md=$'\e[01;31m' \
@@ -68,9 +69,25 @@ zinit light zsh-users/zsh-autosuggestions
 zinit load zdharma/history-search-multi-word
 zinit ice pick"async.zsh" src"pure.zsh"
 zinit light sindresorhus/pure
-zinit load agkozak/zsh-z
+### zinit load agkozak/zsh-z
 zinit ice blockf; zinit light zsh-users/zsh-completions
 zinit ice silent wait:1; zinit light supercrabtree/k
 # zinit ice silent wait!1 atload"ZINIT[COMPINIT_OPTS]=-C; zpcompinit"
 zinit light zdharma/fast-syntax-highlighting
 autoload -Uz compinit && compinit
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/opt/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/opt/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/opt/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/opt/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
