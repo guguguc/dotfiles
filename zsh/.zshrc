@@ -27,6 +27,7 @@ alias grep='grep --color=always'
 alias ip='ip --color=auto'
 alias xlog='cat /var/log/Xorg.0.log'
 alias clean='rm *.out'
+alias tlmgr='/usr/share/texmf-dist/scripts/texlive/tlmgr.pl --usermode'
 
 man() {
     LESS_TERMCAP_md=$'\e[01;31m' \

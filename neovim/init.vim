@@ -103,7 +103,7 @@ Plug 'liuchengxu/vista.vim'
 Plug 'mbbill/undotree'
 
 " Highlight
-Plug 'nvim-treesitter/nvim-treesitter'
+Plug 'nvim-treesitter/nvim-treesitter', {'commit': 'be9c4ab36ded5adb8c30c3d6a89322e2ec1d8da3'}
 
 " Language
 Plug 'fatih/vim-go', {'do': ':GoUpdateBinaries'}
