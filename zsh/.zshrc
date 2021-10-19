@@ -1,7 +1,7 @@
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
-HISTSIZE=500000
-SAVEHIST=500000
+HISTSIZE=50000000
+SAVEHIST=50000000
 PROMPT='%B%F{red}%~%f%b %# '
 setopt autocd beep extendedglob nomatch notify
 
@@ -19,7 +19,7 @@ alias ls='ls --color'
 alias pc='proxychains'
 alias py='python'
 alias mk='mkdir'
-# alias k='ls'
+alias k='ls'
 alias kl='ls -alh'
 alias e='nvim'
 alias vic='vi ~/.config/i3/config'
@@ -28,6 +28,7 @@ alias ip='ip --color=auto'
 alias xlog='cat /var/log/Xorg.0.log'
 alias clean='rm *.out'
 alias tlmgr='/usr/share/texmf-dist/scripts/texlive/tlmgr.pl --usermode'
+alias lg='lazygit'
 
 man() {
     LESS_TERMCAP_md=$'\e[01;31m' \

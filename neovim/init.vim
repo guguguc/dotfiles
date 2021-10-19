@@ -1,4 +1,4 @@
-syntax on
+syntax enable
 set number
 set cursorline
 set relativenumber
@@ -29,6 +29,7 @@ set visualbell
 set colorcolumn=80
 set ttyfast
 set lazyredraw
+
 
 " =====================================================
 "                          Terminal
@@ -103,7 +104,7 @@ Plug 'liuchengxu/vista.vim'
 Plug 'mbbill/undotree'
 
 " Highlight
-Plug 'nvim-treesitter/nvim-treesitter', {'commit': 'be9c4ab36ded5adb8c30c3d6a89322e2ec1d8da3'}
+Plug 'nvim-treesitter/nvim-treesitter'
 
 " Language
 Plug 'fatih/vim-go', {'do': ':GoUpdateBinaries'}
