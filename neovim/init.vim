@@ -44,6 +44,7 @@ let mapleader=" "
 
 noremap <leader>rc :e ~/.config/nvim/init.vim<CR>
 noremap <leader>src :source ~/.config/nvim/init.vim<CR>
+noremap <leader><leader>= i=====================================================<ESC>
 
 " move fast
 noremap <c-j> 5j
@@ -163,7 +164,7 @@ nmap <silent> <leader>- <Plug>(coc-diagnostic-prev)
 nmap <silent> <leader>= <Plug>(coc-diagnostic-next)
 
 " Refaction
-nmap <F6> <Plug>(coc-rename)
+nmap <F2> <Plug>(coc-rename)
 
 " Goto
 nmap <silent> gd <Plug>(coc-definition)

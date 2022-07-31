@@ -2,22 +2,44 @@
 HISTFILE=~/.histfile
 HISTSIZE=50000000
 SAVEHIST=50000000
+setopt APPEND_HISTORY # Don't erase history
+setopt EXTENDED_HISTORY # Add additional data to history like timestamp
+setopt INC_APPEND_HISTORY # Add immediately
+setopt HIST_FIND_NO_DUPS # Don't show duplicates in search
+setopt HIST_IGNORE_SPACE # Don't preserve spaces. You may want to turn it off
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_SAVE_NO_DUPS
+setopt HISTVERIFY
+setopt NO_HIST_BEEP # Don't beep
+setopt SHARE_HISTORY # Share history between session/terminals
+setopt AUTO_PUSHD
+setopt PUSHD_TO_HOME
+setopt PUSHD_IGNORE_DUPS
+setopt PUSHD_MINUS
+
 PROMPT='%B%F{red}%~%f%b %# '
-setopt autocd beep extendedglob nomatch notify
+setopt autocd extendedglob nomatch notify
 
 path+=('/home/gugugu/.local/bin')
 export PATH
 export QT_QPA_PLATFORMTHEME=qt5ct
 export QT_AUTO_SCREEN_SCALE_FACTOR=1
+export GLFW_IM_MODULE=ibus
 export GOPATH=/home/gugugu/.local/lib/go
+export GTK_IM_MODULE DEFAULT=ibus
+export QT_IM_MODULE  DEFAULT=ibus
+export XMODIFIERS    DEFAULT=@im=ibus
 
 # emacs edit mode
 bindkey -e
 bindkey '^ ' autosuggest-accept
 
 alias ls='ls --color'
+alias ll='ls -al --color'
 alias pc='proxychains'
 alias py='python'
+alias pd='pushd -q'
+alias od='popd'
 alias mk='mkdir'
 alias k='ls'
 alias kl='ls -alh'
@@ -29,6 +51,7 @@ alias xlog='cat /var/log/Xorg.0.log'
 alias clean='rm *.out'
 alias tlmgr='/usr/share/texmf-dist/scripts/texlive/tlmgr.pl --usermode'
 alias lg='lazygit'
+alias dirs='dirs -v -l'
 
 man() {
     LESS_TERMCAP_md=$'\e[01;31m' \
@@ -80,16 +103,16 @@ autoload -Uz compinit && compinit
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/opt/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/opt/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/opt/miniconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/opt/miniconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
+# __conda_setup="$('/opt/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+# if [ $? -eq 0 ]; then
+#     eval "$__conda_setup"
+# else
+#     if [ -f "/opt/miniconda3/etc/profile.d/conda.sh" ]; then
+#         . "/opt/miniconda3/etc/profile.d/conda.sh"
+#     else
+#         export PATH="/opt/miniconda3/bin:$PATH"
+#     fi
+# fi
+# unset __conda_setup
 # <<< conda initialize <<<
-
+# unsetopt BEEP
